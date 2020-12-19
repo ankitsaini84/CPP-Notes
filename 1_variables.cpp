@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 int main(void) {
     // Copy, Direct & List Initializations..
 
@@ -36,6 +34,6 @@ int main(void) {
     int f { e + 5}; // the compiler will resolve the expression to a single value and assign it to 'f'.
     /* Note :- Values calculated in an expression are discarded at the end of the expression. */
 
-    cout << "a = " << a << "\nb = " << b << "\nc = " << c << "\nd = " << d << "\ne = " << e << "\nf = " << f << '\n';
+    std::cout << "a = " << a << "\nb = " << b << "\nc = " << c << "\nd = " << d << "\ne = " << e << "\nf = " << f << '\n';
     return 0;
 }
