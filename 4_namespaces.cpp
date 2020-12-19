@@ -12,8 +12,10 @@
  
 using namespace std; // makes std::cout accessible as "cout"
  
-void cout() // declares our own "cout" function
-{}
+int cout() // declares our own "cout" function
+{
+    return 0;
+}
  
 int main()
 {
