@@ -1,1 +1,1 @@
-Notes and code snippets in quest to brush-up on C++
+Notes and code snippets in quest to brush-up on C++ version 17.
