@@ -2,7 +2,17 @@
 
 int main() {
     /**
-     * Notes ~ By definintion, unsigned integers CANNOT overflow.
+     * Integer overflow (often called overflow for short) occurs when we try to store a value 
+     * that is outside the range of the type. Essentially, the number we are trying to store
+     * requires more bits to represent than the object has available. In such a case, data is
+     * lost because the object doesn’t have enough memory to store everything.
+     * 
+     * In the case of SIGNED INTEGERS, which bits are lost is not well defined, 
+     * thus signed integer overflow leads to undefined behavior.
+     */
+
+    /**
+     * By definintion, UNSIGNED INTEGERS CANNOT overflow.
      * Instead - if the assigned vaue is out-of-range, it is divided by 1 greater 
      * than the largest number of the type, and only the remainder is kept..
      */
@@ -10,7 +20,6 @@ int main() {
     unsigned short b { a };
     std::cout << "b : " << b << '\n';
     /**
-     * Interesting Note :-
      * Many developers (and some large development houses, such as Google) believe that developers should generally avoid unsigned integers.
      * This is largely because of two behaviors that can cause problems.
      * 
