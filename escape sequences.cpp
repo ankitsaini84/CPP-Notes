@@ -1,5 +1,6 @@
 /**
- * Alert            \a 	Makes an alert, such as a beep
+ * IMP:
+ * Alert            \a 	Make an alert, such as a beep
  * Backspace 	    \b 	Moves the cursor back one space
  * Formfeed     	\f 	Moves the cursor to next logical page
  * Newline 	        \n 	Moves cursor to next line
@@ -20,7 +21,7 @@ int main() {
     char ch {' '};
     while(ch != '.') {
         std::cout << "Enter anything : ";   // Try a sentence with '.' at the end.
-        // Notice, that 'cin' takes only a single character as input and rest of the charaters in the 
+        // NOTE: 'cin' takes only a single character as input and rest of the charaters in the 
         // sentence are queued up for next cin statement.
         std::cin >> ch;
         // Here, '/r' in following statement is a cariage return used to write 
