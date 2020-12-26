@@ -26,7 +26,7 @@ int main () {
     int a {};
     std::cout << "Provide value for a : ";
     std::cin >> a;
-    // constexpr int b {a};                // INVALID - Can't be resolved at compile time.
+    // constexpr int b {a};                // ERROR: Can't be resolved at compile time.
 
     // TIP: Any constant variable whose initializer is known at compile-time should be declared as CONSTEXPR.
     // TIP: Any constant variable whose initializer is not known at compile-time should be declared as CONST.
