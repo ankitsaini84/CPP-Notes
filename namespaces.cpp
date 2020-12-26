@@ -42,7 +42,7 @@ namespace zoo = foo::goo;    // IMP: Namespace Alias
 
 int main()
 {
-    // cout << "Hello, world!"; // NOTE: Compile error!
+    // cout << "Hello, world!"; // ERROR: Compile error!
     /**
      * NOTE:
      * Which cout do we want here - The one in the std namespace or the one we defined above?
