@@ -1,13 +1,14 @@
 /**
  * using namespace std;
  * cout << "Hello";
- * A 'using directive' tells the compiler to check a specified namespace 
+ * NOTE: A 'using directive' tells the compiler to check a specified namespace 
  * when trying to resolve an identifier that has no namespace prefix. 
+ * 
  * So in the above example, when the compiler goes to determine what 
  * identifier 'cout', it will check both locally (where it is undefined) 
  * and in the std namespace (where it will match to std::cout).
  */
-	
+
 #include <iostream> // imports the declaration of std::cout
  
 using namespace std; // makes std::cout accessible as "cout"
@@ -26,7 +27,7 @@ int main()
 }
 
 /**
- * IMPORTANT NOTE :
+ * IMP:
  * The above program doesn’t compile, because the compiler now can’t tell whether we want 
  * the 'cout' function that we defined, or the 'cout' that is defined inside the 'std namespace'. 
  * When using a 'using directive' in this manner, any identifier we define may conflict with 
@@ -37,6 +38,6 @@ int main()
  */
 
 /**
- * TIP :- Avoid using directives (such as using namespace std;) at the top of your program. 
+ * TIP:- Avoid using directives (such as using namespace std;) at the top of your program. 
  * They violate the reason why namespaces were added in the first place. 
  */
