@@ -14,7 +14,7 @@
                 "-Weffc++",
                 "-Wextra",
                 "-Wsign-conversion",
-                "-Werror",          // treat warnings as errors
+                // "-Werror",          // treat warnings as errors
                 "-pedantic-errors",  // disable compiler extensions 
                 "-std=c++17",
             ],
