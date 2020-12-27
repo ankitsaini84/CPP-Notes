@@ -34,6 +34,10 @@ int main(void) {
 
     std::cout << "a = " << a << "\nb = " << b << "\nc = " << c << "\nd = " << d << "\ne = " << e << "\nf = " << f << '\n';
 
+
+
+
+
     // NOTE: Local variables always have a BLOCK SCOPE.
     // Which means they are in scope from their point of definition to the end of the block they are defined within.
     // NOTE: Local variables have AUTOMATIC STORAGE DURATION.
@@ -52,6 +56,6 @@ int main(void) {
 
     // TIP: Define variables in the most limited existing scope.
     // TIP: Avoid creating new blocks whose only purpose is to limit the scope of variables.
-    
+
     return 0;
 }
