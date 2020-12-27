@@ -55,9 +55,8 @@ int main(void) {
     }                   // NOTE: Y goes out of scope, and is destroyed here.
     // std::cout << x << " + " << y << " = " << x + y << '\n';  // ERROR: Y is not accessible here!
 
-
-
     // TIP: Define variables in the most limited existing scope.
     // TIP: Avoid creating new blocks whose only purpose is to limit the scope of variables.
+    
     return 0;
 }
