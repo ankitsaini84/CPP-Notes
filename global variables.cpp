@@ -20,6 +20,7 @@ int g_y;        // Defaultly initialized to 0
 
 // IMP: All const/constexpr global variables have INTERNAL LNKAGE, by default.
 // IMP: All non-const global variables have EXTERNAL LINKAGE, by default.
+// IMP: To make const global varibales have INTERNAL LINKAGE, we use extern keyword.
 // IMP: To make non-const global varibales have INTERNAL LINKAGE, we use static keyword.
 // IMP: 'static' keyword is a STORAGE CLASS SPECIFIER - sets both linkage & storage duration (but not its scope).
 int g_def;                      // Global variable with EXTERNAL linkage
