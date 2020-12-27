@@ -14,7 +14,9 @@ int inputY() {
     return y;
 }
 
-int sum(int x, int y) {
+// IMP: All functions, by default, have EXTERNAL linkage.
+// IMP: To set their linkage to INTERNAL - use static keywork.
+static int sum(int x, int y) {
     return x + y;
 }
 
