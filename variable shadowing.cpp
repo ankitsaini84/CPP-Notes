@@ -19,5 +19,6 @@ int main() {
     std::cout << "X : " << x << '\n';       // Prints value of 'x' in MAIN block scope
     std::cout << "X : " << ::x << '\n';     // Prints value of 'x' in GLOBAL scope
 
+    // TIP: Always AVOID variable shadowing.
     return 0;
 }
