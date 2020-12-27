@@ -31,12 +31,14 @@ int main () {
     // TIP: Any constant variable whose initializer is known at compile-time should be declared as CONSTEXPR.
     // TIP: Any constant variable whose initializer is not known at compile-time should be declared as CONST.
 
-    // NOTE: In C++17, constexpr can be declared as inline.
-
-    // TIP: Best Practice -
+    // TIP: C++14 Practice -
     // Declare constexpr varibales in seperate headerfile inside a namespace
     // ------- Refer constants.h for declaration --------
     std::cout << "Value of Pi : " << constants::pi << '\n';
+
+    // NOTE: In C++17, constexpr can be declared as inline.
+    // TIP: Best Practice - Refer 'constants.h' for explaination.
+    std::cout << "Value of Gravity : " << constants::gravity << '\n';
 
     return 0;
 }
