@@ -2,6 +2,7 @@
 #include <typeinfo>
 
 // TYPE CONVERSION - converting a value from one datatype to another.
+// NOTE: IMPLICIT Type Conversion is also known as COERCION.
 
 // NUMERIC PROMOTION - value from one fundamental datatype is converted into a value of a LARGER fundamental datatype from the SAME family.
 long g_intToLong { 1 };             // Integral promotion - integer gets promoted to long type.
