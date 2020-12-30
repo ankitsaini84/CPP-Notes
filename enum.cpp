@@ -22,7 +22,7 @@ enum Balloon : unsigned int {
     // color_red       = 1, // ERROR: Conflicts with previous 'color_red'
     // IMP: Since, both enum values of 'color_red' are in same global 
     // namesapce - they will conflict with each other.
-    balloon_red     = 1,    // Works!
+    balloon_red     = 2,    // Works!
     // balloon_blue    = -1,// ERROR: enum type is 'unsigned int'.
     // Thus, can only be assigned positive integers as value.
 };
@@ -48,10 +48,11 @@ std::string getColor(const int c) {
 }
 
 int main() {
-    int balloon {color_red};// Assign color_red (Color enum) to int.
+    int balloon {color_red};// Assign 'color_red' (Color enum) to 'int'.
 
     // Color c { 1 };       // ERROR: Can't assign int to type Color.
     Color c {static_cast<Color>(1)};    // Must explicitly cast it.
+    // Color c { color_white };         // Ofcourse, this is allowed.
 
     // std::cin << c;       // ERROR: Can't use cin to input enum value.
     // Work around..
@@ -62,9 +63,18 @@ int main() {
 
     std::cout << "Inputed Color Value : " << c << '\n';
     std::cout << "Inputed Color Name  : " << getColor(c) << '\n';
-    if(c == color_red) {
+    
+    if(inputColor == color_red) {       // Comparison w/ 'int'
         std::cout << "It's the same color as my balloon. :)\n";
     }
+
+    if(color_red == balloon_red) {      // TIP: AVOID IT
+        std::cout << "Oops! color_red == balloon_red\n";
+    }
+    // NOTE: It works as both enum values are implicitly converted to 
+    // integers by the compiler & since both translates to value '2', they 
+    // are comparable. 
+    // TIP: Use 'enum classes' (scoped enumeration) to avoid this.
     
     return 0;
 }
