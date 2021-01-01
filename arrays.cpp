@@ -52,5 +52,27 @@ int main() {
     // Passing array as call-by-value argument
     printLength(primes);
 
+
+
+
+    // Multi-Diamentional Arrays
+    int md_array[][MAX] {       // [rows][columns]
+        {1, 2, 3, 4, 5},        // row 1 values - 1, 2, 3, 4, 5
+        {6, 7, },               // row 2 values - 6, 7, 0, 0, 0
+        // {8, 9, 0, 1, 2, 3}   // ERROR: # of elements exceeds MAX.
+    };
+    // Valid to ommit # of rows when defining multi-dimentional array 
+    // - Compiler calculates it, implicitly.
+
+    // Simple Traversal
+    // NOTE: Generally 1st loop is for traversing rows & 2nd one is for 
+    // columns. It's the same order in which m-array was defined - r * c.
+    for (int x = 0; x < 2; ++x) {       // 1st loop traverses rows.
+        for (int y = 0; y < MAX; ++y)   {// 2nd loop traverses columns.
+            std::cout << md_array[x][y] << ' ';
+        }
+        std::cout << '\n';
+    }
+    
     return 0;
 }
