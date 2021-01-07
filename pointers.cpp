@@ -92,5 +92,32 @@ int main() {
     // the array as the iPtr points to int (4 bytes) and +1 makes it point 
     // to the next element in the array.
 
+
+
+    /**
+     * VOID POINTERS (Generic Pointers)
+     * Void pointers can point to objects of any data type.
+     * And however, it doesn't know what type of object it is pointing to, it needs to be
+     * explicitly casted to another pointer type before indirection.
+     */
+
+    void *voidPtr {nullptr};
+    int value {5};
+
+    voidPtr = &value;
+
+    // std::cout << "Value @ voidPtr : " << *voidPtr;   //ERROR: Illegal indirection
+    std::cout << "Value @ voidPtr : " << *(static_cast<int*>(voidPtr)) << '\n'; // Works!
+
+    // TIP: Some compilers allow to DELETEING a void pointer pointing to dynamically allocated
+    // memory. Doing so should be avoided, as it can result in undefined behaviour.
+
+    // NOTE: Also, doing POINTER ARTITHMATIC, is not possible on a void pointer as it doens't know the type (or size) of the object it is pointing to.
+
+    // NOTE: Also, there's no such thing as a VOID REFERENCE as it would have to point to an 
+    // object of type void and it's have no way of knowing what type of value it referenced.
+    
+    // TIP: Avoid using void pointers unless neccessary.
+
     return 0;
 }
