@@ -5,10 +5,12 @@
 // TIP: When declaring a function, put the asterisk of a pointer return 
 // value next to the type.
 int* foo1(int arr[]) {
+    return nullptr;
 }   // IMP: Compiler implicitly converts (decays) arr[] to int*
 
 int foo2(int *arr) {    // TIP: Better Practice than previous notation.
     *arr = 1;
+    return 0;
 }   // IMP: Compiler implicitly converts (decays) *arr to int*
 
 int main() {
@@ -118,6 +120,38 @@ int main() {
     // object of type void and it's have no way of knowing what type of value it referenced.
     
     // TIP: Avoid using void pointers unless neccessary.
+
+
+
+
+    // POINTER TO POINTER
+    // A 'pointer to a pointer' is a pointer that holds the address of another pointer.
+    int *iPtr5 { &value };  // int-poiner holds address of int
+    int **pPtr1 { &iPtr5 }; // int-pointer-to-pointer holds address of int-pointer
+    // int **pPtr2 { &&value };
+    // ERROR: A pointer-to-pointer can't be directly assigned a value
+    // IMP: Since, 'operator&' requires an lvalue, but '&value' is an rvalue.
+
+    // pointer-to-pointer Extravagenza..
+    int *arr[MAX];                  // Allocating an Array of Pointers
+    int **arrPtrs { new int*[MAX]}; // Dynamically allocating an array of pointers
+    delete[](arrPtrs);              // Deallocating memory for array of pointers
+
+    int arr2D1[MAX][MAX];           // Allocating a 2-D array
+    // int **arr2D2 = new int[MAX][MAX];    // ERROR: Invalid
+    int (*arr2D3)[MAX] = new int[MAX][MAX]; // Only works if MAX is a compile-time constant
+    auto arr2D4 = new int[MAX][MAX];        // Same as above but neat ~ C++11
+
+    int **arr2D5 = new int*[MAX];   // Dynamically allocating a 2-D array
+    for (int i = 0; i < MAX; ++i) {
+        arr2D5[i] = new int[MAX];
+    }
+    for (int i = 0; i < MAX; ++i) { // Deallocating memory alloted to 2-D array
+        delete[](arr2D5[i]);
+    }
+    delete[](arr2D5);
+
+    // TIP: Avoid pointer-to-pointer unless very neccessary.
 
     return 0;
 }
